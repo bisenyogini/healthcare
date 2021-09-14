@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>product home page</title>
+</head>
+<body>
+<h1>
+  welcome to specialize home page
+</h1>
+
+<div th:text="${msg}" class="bg-info text-white"></div>
+<!--<div th:text="${sms}" class="bg-info text-white"></div>-->
+<h2>the doctor detail is</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>name</th>
+    <th>specialization</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Address</th>
+    <th>Note</th>
+    <th>Photo</th>
+    <th>Gender</th>
+
+  </tr>
+  <tr th:each="ob:${list}">
+    <td th:text="${ob.did}"></td>
+    <td th:text="${ob.name}"></td>
+    <td th:text="${ob.spec}"></td>
+    <td th:text="${ob.email}"></td>
+    <td th:text="${ob.mobile}"></td>
+    <td th:text="${ob.addr}"></td>
+    <td th:text="${ob.note}"></td>
+    <td th:text="${ob.photo}"></td>
+    <td th:text="${ob.gen}"></td>
+    <!-- <td>
+         <a th:href="@{ /product/remove(prodId=${ob.prodId})}" class="btn btn-danger">DELETE</a>
+         <a th:href="@{/product/edit(prodId=${ob.prodId})}" class="btn btn-success">EDIT</a>
+     </td>-->
+  </tr>
+  <tr th:each="ob:${list1}">
+    <td th:text="${ob.id}"></td>
+    <td th:text="${ob.code}"></td>
+    <td th:text="${ob.name}"></td>
+    <td th:text="${ob.note}"></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
