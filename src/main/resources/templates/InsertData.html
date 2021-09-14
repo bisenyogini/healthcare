@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>product home page</title>
+</head>
+<body>
+<h1>
+    welcome to specialize home page
+</h1>
+
+<div th:text="${show}" class="bg-info text-white"></div>
+<div th:text="${sms}" class="bg-info text-white"></div>
+<h2>the specialization detail is</h2>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>code</th>
+        <th>name</th>
+        <th>note</th>
+    </tr>
+    <tr th:each="ob:${list}">
+        <td th:text="${ob.id}"></td>
+        <td th:text="${ob.code}"></td>
+        <td th:text="${ob.name}"></td>
+        <td th:text="${ob.note}"></td>
+       <!-- <td>
+            <a th:href="@{ /product/remove(prodId=${ob.prodId})}" class="btn btn-danger">DELETE</a>
+            <a th:href="@{/product/edit(prodId=${ob.prodId})}" class="btn btn-success">EDIT</a>
+        </td>-->
+    </tr>
+    <tr th:each="ob:${list1}">
+        <td th:text="${ob.id}"></td>
+        <td th:text="${ob.code}"></td>
+        <td th:text="${ob.name}"></td>
+        <td th:text="${ob.note}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
